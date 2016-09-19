@@ -20,6 +20,7 @@
             RssService,
             StockService,
             ScrobblerService,
+            InstagramService,
             $rootScope, $scope, $timeout, $interval, tmhDynamicLocale, $translate) {
 
         // Local Scope Vars
