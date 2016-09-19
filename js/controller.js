@@ -249,7 +249,7 @@
               }, function(error) {
                 console.log(error);
               });
-            }    
+            }
 
             if (typeof config.stock !== 'undefined' && config.stock.names.length) {
               registerRefreshInterval(getStock, 30);
@@ -283,7 +283,7 @@
 
             refreshRss();
             $interval(refreshRss, config.rss.refreshInterval * 60000);
-            
+
             updateNews();
             $interval(updateNews, 8000);  // cycle through news every 8 seconds
 
@@ -461,6 +461,11 @@
                     $scope.gifimg = GiphyService.giphyImg();
                     $scope.focus = "gif";
                 });
+            });
+
+            addCommand('instagram_self_pictures', function(img) {
+                $scope.instagram = InstagramService.getSelfPictures();
+                $scope.focus = "instagram"
             });
 
             //Show fitbit stats (registered only if fitbit is configured in the main config)
